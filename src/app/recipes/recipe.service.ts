@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 
 import { Recipe } from './recipe.model'
+import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable()
 export class RecipeService {
@@ -13,11 +14,19 @@ export class RecipeService {
     new Recipe(
     'First Recipe added dynamically', 
     'Here you can find the description of the first Recipe which is added dynamically', 
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2l1YsZKavFYWPludPckfQ6jlkde4bH1YoYqi6xicyW40UgPNx'),
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2l1YsZKavFYWPludPckfQ6jlkde4bH1YoYqi6xicyW40UgPNx',
+    [
+      new Ingredient('Meat', 1),
+      new Ingredient('French Fries', 20)
+    ]),
     new Recipe(
       'Second Recipe added dynamically', 
       'Here you can find the description of the second Recipe which is added dynamically', 
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2l1YsZKavFYWPludPckfQ6jlkde4bH1YoYqi6xicyW40UgPNx')
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2l1YsZKavFYWPludPckfQ6jlkde4bH1YoYqi6xicyW40UgPNx',
+      [
+        new Ingredient('Buns', 2),
+        new Ingredient('Meat', 1)
+      ])
   ];
 
   getRecipes() {
